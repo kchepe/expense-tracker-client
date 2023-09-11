@@ -1,5 +1,3 @@
-export type IOfferType = "rent" | "buy";
-
 export interface IUser {
   id: string;
   email: string;
