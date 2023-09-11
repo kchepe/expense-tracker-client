@@ -1,6 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 import { LOG_IN } from "../gql/mutations/user";
+import { endpoint } from "../constant";
 
 const authOptions: NextAuthOptions = {
   providers: [
@@ -9,7 +10,7 @@ const authOptions: NextAuthOptions = {
       credentials: { email: {}, password: {} },
       async authorize(credentials) {
         try {
-          const response = await fetch("http://server:3000/graphql", {
+          const response = await fetch(endpoint, {
             method: "POST",
             headers: {
               "content-type": "application/json",
