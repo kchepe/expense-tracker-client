@@ -3,7 +3,9 @@ import { getSession } from "next-auth/react";
 import httpLink from "./httpLink";
 import errorLink from "./errorLink";
 import authLink from "./authLink";
-import { endpoint } from "../constant";
+
+const url =
+  "http://ec2-13-215-208-116.ap-southeast-1.compute.amazonaws.com:3000/graphql";
 
 const session = async () => {
   const userSession = await getSession();
@@ -11,12 +13,12 @@ const session = async () => {
 };
 
 const graphqlClient = new ApolloClient({
-  link: from([errorLink, httpLink(endpoint)]),
+  link: from([errorLink, httpLink(url)]),
   cache: new InMemoryCache(),
 });
 
 const authClient = new ApolloClient({
-  link: from([errorLink, authLink(session()).concat(httpLink(endpoint))]),
+  link: from([errorLink, authLink(session()).concat(httpLink(url))]),
   cache: new InMemoryCache(),
 });
 
