@@ -31,10 +31,10 @@ const EditTransactionForm: FC<EditTransactionFormProps> = ({
       const response = await updateTransaction({
         variables: { newTransaction: values },
       });
-      reset();
       refresh();
       showNotification(response.data.updateTransaction.message, "success");
       handleShowModal();
+      reset();
     } catch {
       showError();
     }
