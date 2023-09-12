@@ -10,7 +10,7 @@ const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         try {
           const response = await fetch(
-            "https://ec2-13-215-208-116.ap-southeast-1.compute.amazonaws.com:3000/graphql",
+            "http://ec2-13-215-208-116.ap-southeast-1.compute.amazonaws.com:3000/graphql",
             {
               method: "POST",
               headers: {
@@ -33,6 +33,7 @@ const authOptions: NextAuthOptions = {
           }
           return data.data.login;
         } catch (err) {
+          console.log(err);
           return null;
         }
       },
