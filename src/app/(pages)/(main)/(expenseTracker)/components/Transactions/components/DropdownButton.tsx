@@ -31,11 +31,11 @@ const DropdownButton: FC<DropdownButtonProps> = (props) => {
       const response = await removeTransaction({
         variables: { transactionId: props.id },
       });
-      refresh();
       showNotification(response.data.removeTransaction.message, "success");
     } catch {
       showError();
     }
+    refresh();
   };
 
   const handleShowModal = () => {
