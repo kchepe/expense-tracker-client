@@ -39,13 +39,13 @@ const TransactionInputs: FC<TransactionInputsProps> = ({
       const response = await addTransaction({
         variables: { newTransaction },
       });
+      refresh();
       handleShowModal();
-      showNotification(response.data.addTransaction.message, "success");
       reset();
+      showNotification(response.data.addTransaction.message, "success");
     } catch {
       showError();
     }
-    refresh();
   };
 
   return (
