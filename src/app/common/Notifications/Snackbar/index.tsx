@@ -32,7 +32,7 @@ const Snackbar: FC<SnackbarProps> = ({ timeout = 2500 }) => {
     <>
       <Box
         aria-live="assertive"
-        className="pointer-events-none fixed inset-0 flex px-4 py-6 items-start sm:p-6"
+        className="pointer-events-none fixed inset-0 flex px-4 py-6 items-start sm:p-6 z-50"
       >
         <Box className="flex w-full flex-col items-center space-y-4 sm:items-end">
           <Transition
