@@ -20,7 +20,7 @@ interface TransactionsProps {
 const Transactions: FC<TransactionsProps> = ({ transactions }) => {
   return (
     <Box className="flex flex-col gap-4">
-      <Box>
+      {/* <Box>
         <Text variant="h6">Filter</Text>
       </Box>
       <Box className="inline-flex gap-4 flex-col sm:flex-row">
@@ -31,7 +31,7 @@ const Transactions: FC<TransactionsProps> = ({ transactions }) => {
           label="Start Date"
         />
         <TextField type="date" outlined className="p-[10px]" label="End Date" />
-      </Box>
+      </Box> */}
       <Text variant="h6">Transactions</Text>
       <Box className="flex flex-col gap-4 overflow-y-auto h-[28rem] scrollbar">
         {transactions.length === 0 ? (
