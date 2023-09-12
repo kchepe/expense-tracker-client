@@ -10,7 +10,7 @@ const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         try {
           const response = await fetch(
-            "http://ec2-13-215-208-116.ap-southeast-1.compute.amazonaws.com:3000/graphql",
+            "https://ec2-13-215-208-116.ap-southeast-1.compute.amazonaws.com:3000/graphql",
             {
               method: "POST",
               headers: {

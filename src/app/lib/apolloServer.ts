@@ -10,7 +10,7 @@ import getSessionUtil from "../utils/getSession.util";
 import authLink from "./authLink";
 
 const url =
-  "http://ec2-13-215-208-116.ap-southeast-1.compute.amazonaws.com:3000/graphql";
+  "https://ec2-13-215-208-116.ap-southeast-1.compute.amazonaws.com:3000/graphql";
 
 const session = async (): Promise<string> => {
   const userSession = await getSessionUtil();
