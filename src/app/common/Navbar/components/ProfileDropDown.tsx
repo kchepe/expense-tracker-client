@@ -54,7 +54,6 @@ const ProfileDropDown = () => {
             <Menu.Item>
               {({ active }) => (
                 <Button
-                  onClick={() => push("/my-properties")}
                   className={clsx(
                     active ? "bg-red-100 rounded-t-md" : "text-black",
                     "p-4 text-sm w-full text-left flex items-center gap-2 border-b"
